@@ -4,7 +4,7 @@ function guid(){
         return com_create_guid();
     }else{
         mt_srand((double)microtime()*1000000);
-        $charid = strtoupper(md5(uniqid(rand(), true)));
+        $charid = md5(uniqid(rand(), true));
         $hyphen = chr(45);// "-"
         $uuid = .substr($charid, 0, 8).$hyphen
                 .substr($charid, 8, 4).$hyphen
@@ -14,5 +14,5 @@ function guid(){
         return $uuid;
     }
 }
-echo guid();//F3E3527A-212F-131A-20CD-8D1FC679B7C5
+echo guid();//df5b1241-3857-050d-d79b-52a3295adcd5
 ?>
